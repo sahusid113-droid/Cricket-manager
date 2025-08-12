@@ -1,0 +1,238 @@
+/* Reset & base */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #1a1a1a;
+}
+
+body {
+  background: linear-gradient(135deg, #e6f0ff 0%, #ffffff 100%);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  font-size: 16px;
+}
+
+header {
+  background-color: #004080;
+  color: #fff;
+  padding: 1rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0 4px 8px rgb(0 0 0 / 0.15);
+}
+
+header h1 {
+  font-weight: 700;
+  font-size: 1.8rem;
+}
+
+nav {
+  display: flex;
+  gap: 1rem;
+}
+
+.nav-btn {
+  background: transparent;
+  border: 2px solid #fff;
+  border-radius: 4px;
+  color: #fff;
+  padding: 0.4rem 1rem;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.nav-btn:hover,
+.nav-btn.active {
+  background-color: #00264d;
+  color: #a3d0ff;
+  border-color: #a3d0ff;
+}
+
+main {
+  flex: 1;
+  padding: 2rem;
+  max-width: 900px;
+  margin: 0 auto;
+  width: 100%;
+  background: #f9fbff;
+  box-shadow: 0 6px 12px rgb(0 64 128 / 0.1);
+  border-radius: 8px;
+  margin-top: 1rem;
+}
+
+h2 {
+  margin-bottom: 1rem;
+  color: #003366;
+  font-weight: 700;
+  font-size: 1.6rem;
+  border-bottom: 2px solid #004080;
+  padding-bottom: 0.25rem;
+  width: fit-content;
+}
+
+.hidden-section {
+  display: none;
+}
+
+.active-section {
+  display: block;
+}
+
+/* Team List styling */
+#team-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 1.25rem;
+}
+
+.team-card {
+  background: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 3px 8px rgb(0 0 0 / 0.12);
+  padding: 1rem;
+  text-align: center;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  user-select: none;
+}
+
+.team-card:hover {
+  box-shadow: 0 8px 20px rgb(0 64 128 / 0.3);
+  transform: translateY(-5px);
+}
+
+.team-logo {
+  width: 80px;
+  height: 80px;
+  object-fit: contain;
+  margin-bottom: 0.75rem;
+  animation: subtlePulse 3s ease-in-out infinite;
+}
+
+@keyframes subtlePulse {
+  0%, 100% { filter: drop-shadow(0 0 0 rgba(0,0,0,0)); }
+  50% { filter: drop-shadow(0 0 8px rgba(0,64,128,0.3)); }
+}
+
+/* Simulation section */
+#simulation-status {
+  margin-bottom: 1rem;
+  font-weight: 600;
+  color: #004080;
+}
+
+#start-match-btn {
+  background-color: #004080;
+  color: #fff;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  font-weight: 700;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.25s ease;
+  margin-bottom: 1rem;
+}
+
+#start-match-btn:hover {
+  background-color: #00264d;
+}
+
+#match-log {
+  max-height: 250px;
+  overflow-y: auto;
+  background: #e6f0ff;
+  padding: 1rem;
+  border-radius: 6px;
+  font-family: monospace;
+  font-size: 0.9rem;
+  color: #003366;
+}
+
+/* Data & Coach Edge Panel */
+#coach-edge-panel {
+  background: #dceeff;
+  padding: 1rem;
+  border-radius: 8px;
+  margin-bottom: 1.5rem;
+  box-shadow: inset 0 0 10px rgba(0,64,128,0.15);
+}
+
+#talk-coach-btn {
+  background-color: #0073e6;
+  color: #fff;
+  border: none;
+  padding: 0.5rem 1rem;
+  font-weight: 600;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-bottom: 0.75rem;
+}
+
+#talk-coach-btn:hover {
+  background-color: #004080;
+}
+
+#coach-advice {
+  background: #f0f8ff;
+  border-left: 4px solid #004080;
+  padding: 1rem;
+  font-style: italic;
+  min-height: 60px;
+  color: #003366;
+  white-space: pre-wrap;
+}
+
+/* Team Stats table */
+#team-stats {
+  background: #fff;
+  border-radius: 8px;
+  padding: 1rem;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.12);
+  max-height: 300px;
+  overflow-y: auto;
+  font-size: 0.9rem;
+}
+
+#team-stats table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+#team-stats th,
+#team-stats td {
+  text-align: left;
+  padding: 0.5rem 0.75rem;
+  border-bottom: 1px solid #e1e8f0;
+}
+
+#team-stats th {
+  background-color: #f0f8ff;
+  color: #003366;
+  font-weight: 700;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 1rem;
+  font-size: 0.9rem;
+  color: #666;
+  background: #f0f4ff;
+  margin-top: 2rem;
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+  main {
+    padding: 1rem;
+  }
+  #team-list {
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  }
+}
